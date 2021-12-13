@@ -36,8 +36,11 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Statistics = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryResults)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,6 +86,9 @@
             // dgvHistoryResults
             // 
             this.dgvHistoryResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistoryResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Date,
+            this.Statistics});
             this.dgvHistoryResults.Location = new System.Drawing.Point(6, 81);
             this.dgvHistoryResults.Name = "dgvHistoryResults";
             this.dgvHistoryResults.RowHeadersWidth = 51;
@@ -128,6 +134,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.dgvHistoryResults);
             this.tabPage2.Controls.Add(this.label2);
@@ -140,6 +147,16 @@
             this.tabPage2.Text = "История результатов";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(6, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 25);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Выберите тест:";
+            // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -148,6 +165,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(538, 32);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // label2
             // 
@@ -158,6 +176,20 @@
             this.label2.Size = new System.Drawing.Size(156, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "Выберите тест:";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Дата";
+            this.Date.MinimumWidth = 6;
+            this.Date.Name = "Date";
+            this.Date.Width = 125;
+            // 
+            // Statistics
+            // 
+            this.Statistics.HeaderText = "Статистика";
+            this.Statistics.MinimumWidth = 6;
+            this.Statistics.Name = "Statistics";
+            this.Statistics.Width = 125;
             // 
             // PersonalPage
             // 
@@ -191,6 +223,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Statistics;
     }
 }
 
