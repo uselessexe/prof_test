@@ -32,6 +32,8 @@
             this.buttonTest2 = new System.Windows.Forms.Button();
             this.buttonTest3 = new System.Windows.Forms.Button();
             this.dgvHistoryResults = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Statistics = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNickName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -39,8 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Statistics = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryResults)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -95,6 +95,20 @@
             this.dgvHistoryResults.RowTemplate.Height = 24;
             this.dgvHistoryResults.Size = new System.Drawing.Size(700, 316);
             this.dgvHistoryResults.TabIndex = 3;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Дата";
+            this.Date.MinimumWidth = 6;
+            this.Date.Name = "Date";
+            this.Date.Width = 125;
+            // 
+            // Statistics
+            // 
+            this.Statistics.HeaderText = "Статистика";
+            this.Statistics.MinimumWidth = 6;
+            this.Statistics.Name = "Statistics";
+            this.Statistics.Width = 125;
             // 
             // labelNickName
             // 
@@ -165,7 +179,8 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(538, 32);
             this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            this.comboBox1.Text = "Выберите тест:";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -177,25 +192,11 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Выберите тест:";
             // 
-            // Date
-            // 
-            this.Date.HeaderText = "Дата";
-            this.Date.MinimumWidth = 6;
-            this.Date.Name = "Date";
-            this.Date.Width = 125;
-            // 
-            // Statistics
-            // 
-            this.Statistics.HeaderText = "Статистика";
-            this.Statistics.MinimumWidth = 6;
-            this.Statistics.Name = "Statistics";
-            this.Statistics.Width = 125;
-            // 
             // PersonalPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 608);
+            this.ClientSize = new System.Drawing.Size(782, 608);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.labelNickName);
             this.Name = "PersonalPage";

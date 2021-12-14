@@ -29,15 +29,13 @@ namespace ComplexPrototype
         {
             this.con = con;
             InitializeComponent();
+            
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            fillTable();
-
-            /*dgvHistoryResults.Columns.Clear();
-            dgvHistoryResults.RowCount = 1;
-            int rowNum = 0;*/
+            label1.Text = "";
+            comboBox1.Items.Clear();
+            comboBox1.Refresh();
 
             DataTable User = new DataTable();
             con.Open();
@@ -48,55 +46,51 @@ namespace ComplexPrototype
             
             DA = new NpgsqlDataAdapter($"SELECT \"TestName\"FROM \"Test\"", con);
             DA.Fill(tests);
-            comboBox1.DataSource = tests;
-            comboBox1.DisplayMember = "TestName";
-            /*DA = new NpgsqlDataAdapter($"SELECT \"Date\",\"Statistics\" FROM \"Users\" u JOIN \"ResultHistory\" rh on(u.\"UserID\"=rh.\"UserID\")" +
-                $"JOIN \"Test\" t on (rh.\"TestID\"=t.\"TestId\")" +
-                $"WHERE u.\"UserID\"={id}" +
-                $"ORDER BY \"ID\" DESC", con);//,\"TestName\"
-            DA.Fill(history);*/
-
-            //dgvHistoryResults.Columns[0].HeaderText = "Дата";
-            //dgvHistoryResults.Columns[0].HeaderText = "Статистика";
-            /*foreach (DataRow row in history.Rows)
-            {
-                if (row.RowState == DataRowState.Deleted)
-                    continue;
-
-                dgvHistoryResults.RowCount++;
-                dgvHistoryResults.Rows[rowNum].Cells[0].Value = history.Rows[rowNum].ItemArray[0].ToString();
-                dgvHistoryResults.Rows[rowNum].Cells[1].Value = history.Rows[rowNum].ItemArray[1].ToString();
-
-                rowNum++;
-            }*/
-
-
-            //dgvHistoryResults.DataSource = history.DefaultView;
+            foreach (DataRow row in tests.Rows)
+            {     
+                comboBox1.Items.Add(row.ItemArray[0].ToString());
+            }
+            /*comboBox1.DataSource = tests;
+            comboBox1.DisplayMember = "TestName";*/
+            
             con.Close();
         }
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)//при изменении значения строки должны меняються данные в таблице
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             label1.Text = comboBox1.Text;
+            fillTable(comboBox1.Text);
         }
 
-        private void fillTable(/*int testNum*/)//выбор конкретного теста(нужен combobox)
+        private void fillTable(string testName)//выбор конкретного теста(нужен combobox)
         {
             try 
             {
-                DataTable User = new DataTable();
+                history.Rows.Clear();
+                dgvHistoryResults.Rows.Clear();
+                dgvHistoryResults.Refresh();
+                
                 con.Open();
-                NpgsqlDataAdapter DA = new NpgsqlDataAdapter($"SELECT \"Login\" FROM \"Users\" " +
-                                                            $"WHERE \"UserID\"={id}", con);//
-                DA.Fill(User);
-                labelNickName.Text = $"Имя пользователя: {User.Rows[0][0].ToString()}";
-                DA = new NpgsqlDataAdapter($"SELECT \"Date\",\"Statistics\" FROM \"Users\" u JOIN \"ResultHistory\" rh on(u.\"UserID\"=rh.\"UserID\")" +
+                 
+                NpgsqlDataAdapter DA = new NpgsqlDataAdapter($"SELECT \"Date\",\"Statistics\" FROM \"Users\" u JOIN \"ResultHistory\" rh on(u.\"UserID\"=rh.\"UserID\")" +
                     $"JOIN \"Test\" t on (rh.\"TestID\"=t.\"TestId\")" +
-                    $"WHERE u.\"UserID\"={id}" +
-                    $"ORDER BY \"ID\" DESC", con);//,\"TestName\"
+                    $"WHERE u.\"UserID\"={id} AND \"TestName\"='{testName}'" +
+                    $"ORDER BY \"ID\" DESC", con);
                 DA.Fill(history);
 
+                //dgvHistoryResults.DataSource = history.DefaultView;
+                dgvHistoryResults.RowCount = 1;
+                int rowNum = 0;
+                foreach (DataRow row in history.Rows)
+                {
+                    dgvHistoryResults.RowCount++;
+                    dgvHistoryResults.Rows[rowNum].Cells[0].Value = row.ItemArray[0].ToString();
+                    dgvHistoryResults.Rows[rowNum].Cells[1].Value = row.ItemArray[1].ToString();
 
-                dgvHistoryResults.DataSource = history.DefaultView;
+                    rowNum++;
+                }
+
                 con.Close();
             }
             catch (Exception ex)
@@ -153,6 +147,5 @@ namespace ComplexPrototype
             Close();*/
         }
 
- 
     }
 }
