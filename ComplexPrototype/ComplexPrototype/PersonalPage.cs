@@ -59,7 +59,7 @@ namespace ComplexPrototype
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label1.Text = comboBox1.Text;
+            //label1.Text = comboBox1.Text;
             fillTable(comboBox1.Text);
         }
 
@@ -104,11 +104,16 @@ namespace ComplexPrototype
         {
  
             //рабочий вариант
-
-              Hide();
+              /*Hide();
                Test1 test1 = new Test1(con,id);
                test1.ShowDialog();
-               Close();
+               Close();*/
+
+            //попытка теста в универсальной форме
+            Hide();
+            AllTests alltests = new AllTests(con, 1,id);
+            alltests.ShowDialog();
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -116,35 +121,35 @@ namespace ComplexPrototype
 
             //рабочий вариант
 
-            Hide();
+            /*Hide();
              Test2 test2 = new Test2(con,id);
              test2.ShowDialog();
-             Close();
+             Close();*/
 
 
 
             //попытка теста в универсальной форме
-            /*Hide();
-            AllTests alltests = new AllTests(con, 2);
+            Hide();
+            AllTests alltests = new AllTests(con, 2,id);
             alltests.ShowDialog();
-            Close();*/
+            Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
             //рабочий вариант
-            Hide();
+            /*Hide();
             Test3 test3 = new Test3(con,id);
             test3.ShowDialog();
-            Close();
+            Close();*/
 
 
             //попытка теста в универсальной форме
-            /*Hide();
-            AllTests alltests = new AllTests(con,3);
+            Hide();
+            AllTests alltests = new AllTests(con,3,id);
             alltests.ShowDialog();
-            Close();*/
+            Close();
         }
 
     }

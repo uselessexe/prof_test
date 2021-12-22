@@ -84,12 +84,13 @@ namespace ComplexPrototype
 
             if (ButtonA.Checked == true)
             {
-                if (questions.Rows[i][7] != null) Answers.Add(Convert.ToInt32(questions.Rows[i][7]));//добавляется id результата, на который повлияет ответ      
+                if (questions.Rows[i][7].ToString() != "") Answers.Add(Convert.ToInt32(questions.Rows[i][7]));//добавляется id результата, на который повлияет ответ      
             }
-            /*else
+            else
             {
-                if (questions.Rows[i + 1][7] != null) Answers.Add(Convert.ToInt32(questions.Rows[i + 1][7]));
-            }*/
+                string s = questions.Rows[i + 1][7].ToString();//для проверки в отладке
+                if (questions.Rows[i + 1][7].ToString() != "") Answers.Add(Convert.ToInt32(questions.Rows[i + 1][7]));
+            }
 
             
         }
