@@ -42,25 +42,7 @@ namespace ComplexPrototype
                 PersonalPage PP = new PersonalPage(Convert.ToInt32(User.Rows[0].ItemArray[0].ToString()), con);
                 Hide();
                 PP.ShowDialog();            
-                Close();
-                
-                /*NpgsqlCommand cmd = new NpgsqlCommand($"SELECT * FROM \"Users\" WHERE \"Login\"={textBoxLogin.Text} " +
-                                                             $"AND \"Password\" = {textBoxPassword.Text}", con);
-                using (NpgsqlDataReader rdr = cmd.ExecuteReader())
-                {
-                    if (rdr.HasRows)
-                    {   
-                        DataTable t = new DataTable();
-                        t.Load(rdr);
-
-                         Hide();
-                        PersonalPage PP = new PersonalPage(Convert.ToInt32(t.Rows[0].ItemArray[0].ToString()),con);
-                        PP.ShowDialog();
-                    }
-                    
-                }*/
-
-                
+                Close();             
             }
             catch (Exception ex)
             {
