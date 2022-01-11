@@ -17,10 +17,12 @@ class ProductController{
         res.json(product.rows[0])
     }
     async getProdParam(req,res){
-        const par = req.params.good
-        const product = await db.query(`SELECT * FROM \"products\" WHERE good = $1`,[par])
+        const{id,good}=req.body
+        //const id = req.params.id
+        //const par = req.params.good
+        const product = await db.query(`SELECT * FROM products WHERE id = $1 AND good = $2`,[id,good])
         res.json(product.rows)
-    }
+    } 
     async UpdProdID(req,res){
         const{id,good,price,quantity}=req.body
         const updProd = await db.query(`UPDATE products SET good = $1,price = $2, quantity = $3 WHERE id =$4 RETURNING *`,[good,price,quantity,id])

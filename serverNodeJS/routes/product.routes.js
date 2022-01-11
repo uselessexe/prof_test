@@ -6,7 +6,7 @@ const productController = require('../controller/product.controller')
 router.post(`/product`,productController.CreateProd)
 router.get(`/product`,productController.getProd)
 router.get(`/product/:id`,productController.getProdID)
-router.get(`/products/:good`,productController.getProdParam)
+router.post(`/productsParams`,productController.getProdParam)
 router.put(`/product`,productController.UpdProdID)
 
 module.exports = router
