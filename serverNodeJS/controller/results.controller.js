@@ -18,7 +18,6 @@ class ResultsController{
     }
     async getLoginPersonalPage(req,res){
         const id = req.params.UserID
-        //const {UserID} = req.body
         const checkData =await db.query(`SELECT \"Login\" FROM \"Users\" 
         WHERE \"UserID\"=$1`,[id])
 
@@ -29,7 +28,7 @@ class ResultsController{
             res.json()
         }
     }
-    async getLoginPersonalPage(req,res){
+    async getTestsPersonalPage(req,res){
 
         const checkData =await db.query(`SELECT \"TestName\"FROM \"Test\"`)
 
