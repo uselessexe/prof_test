@@ -67,10 +67,7 @@ C:\Users\USER\Desktop\вятгу\информатика\5 семестр\ком�
 C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.Autorization.resources
 C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.PersonalPage.resources
 C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.Registration.resources
-C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.Test3.resources
 C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.Properties.Resources.resources
-C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.Test1.resources
-C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.Test2.resources
 C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.csproj.GenerateResource.cache
 C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.csproj.CoreCompileInputs.cache
 C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.csproj.CopyComplete

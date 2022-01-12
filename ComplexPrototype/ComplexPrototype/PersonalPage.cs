@@ -128,27 +128,7 @@ namespace ComplexPrototype
                         }
                     }
                 }
-                /* con.Open();
 
-                NpgsqlDataAdapter DA = new NpgsqlDataAdapter($"SELECT \"Date\",\"Statistics\" FROM \"Users\" u JOIN \"ResultHistory\" rh on(u.\"UserID\"=rh.\"UserID\")" +
-                     $"JOIN \"Test\" t on (rh.\"TestID\"=t.\"TestId\")" +
-                     $"WHERE u.\"UserID\"={id} AND \"TestName\"='{testName}'" +
-                     $"ORDER BY \"ID\" DESC", con);
-                 DA.Fill(history);
-
-                 //dgvHistoryResults.DataSource = history.DefaultView;
-                 dgvHistoryResults.RowCount = 1;
-                 int rowNum = 0;
-                 foreach (DataRow row in history.Rows)
-                 {
-                     dgvHistoryResults.RowCount++;
-                     dgvHistoryResults.Rows[rowNum].Cells[0].Value = row.ItemArray[0].ToString();
-                     dgvHistoryResults.Rows[rowNum].Cells[1].Value = row.ItemArray[1].ToString();
-
-                     rowNum++;
-                 }
-
-                 con.Close();*/
             }
             catch (Exception ex)
             {

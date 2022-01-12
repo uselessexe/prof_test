@@ -3,7 +3,7 @@ class TestController{
     
     async getQuestionsAnswers(req,res){
         const id = req.params.TestID
-        const checkData =await db.query(`SELECT * FROM \"Question\" q JOIN \"Answer\" a
+        const checkData =await db.query(`SELECT a.\"QuestionID\",\"QuestionText\",\"TestID\",\"QuestionNumber\",\"AnswerID\",\"AnswerText\",\"ResultID\" FROM \"Question\" q JOIN \"Answer\" a
         on (a.\"QuestionID\"=q.\"QuestionID\")
         WHERE \"TestID\" = $1
         ORDER BY a.\"QuestionID\",\"AnswerID\"`,[id])
@@ -27,11 +27,11 @@ class TestController{
             res.json()
         } 
     }
-    async ShowResults(req,res){
+    async RecResults(req,res){
         const {UserID,Date,TestID,Statistics} = req.body
         const newData =await db.query(`INSERT INTO \"ResultHistory\"
         (\"UserID\",\"Date\",\"TestID\",\"Statistics\" )
-        $" VALUES($1,$2,$3,$4) RETURNING *`,[UserID,Date,TestID,Statistics])
+         VALUES($1,$2,$3,$4) RETURNING *`,[UserID,Date,TestID,Statistics])
 
         if (checkData.rowCount>0)
             res.json(newData.rows[0])
