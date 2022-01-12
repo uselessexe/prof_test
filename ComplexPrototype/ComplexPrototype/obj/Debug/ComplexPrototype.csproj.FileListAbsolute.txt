@@ -76,3 +76,5 @@ C:\Users\USER\Desktop\вятгу\информатика\5 семестр\ком�
 C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.csproj.CopyComplete
 C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.exe
 C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\obj\Debug\ComplexPrototype.pdb
+C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\bin\Debug\Newtonsoft.Json.dll
+C:\Users\USER\Desktop\вятгу\информатика\5 семестр\комплексное задание\prof_test\ComplexPrototype\ComplexPrototype\bin\Debug\Newtonsoft.Json.xml

@@ -1,13 +1,13 @@
 const db = require('../db')
 class ResultsController{
     
-    async getResultsPersonalPage(req,res){
-        const {TestId,TestName} = req.body
+    async getHistoryPersonalPage(req,res){
+        const {UserId,TestName} = req.body
         const checkData =await db.query(`SELECT \"Date\",
         \"Statistics\" FROM \"Users\" u JOIN \"ResultHistory\"
          rh on(u.\"UserID\"=rh.\"UserID\") JOIN \"Test\" t on 
          (rh.\"TestID\"=t.\"TestId\") WHERE u.\"UserID\"=$1 AND
-          \"TestName\"= $2 ORDER BY \"ID\" DESC`,[TestId,TestName])
+          \"TestName\"= $2 ORDER BY \"ID\" DESC`,[UserId,TestName])
 
         if (checkData.rowCount>0)
             res.json(checkData.rows)
@@ -22,7 +22,7 @@ class ResultsController{
         WHERE \"UserID\"=$1`,[id])
 
         if (checkData.rowCount>0)
-            res.json(checkData.rows)
+            res.json(checkData.rows[0])
         else
         {
             res.json()

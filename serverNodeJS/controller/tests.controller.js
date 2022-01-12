@@ -30,8 +30,8 @@ class TestController{
     async ShowResults(req,res){
         const {UserID,Date,TestID,Statistics} = req.body
         const newData =await db.query(`INSERT INTO \"ResultHistory\"
-        (\"UserID\",\"Date\",\"TestID\",\"Statistics\"  RETURNING *)
-        $" VALUES($1,$2,$3,$4)`,[UserID,Date,TestID,Statistics])
+        (\"UserID\",\"Date\",\"TestID\",\"Statistics\" )
+        $" VALUES($1,$2,$3,$4) RETURNING *`,[UserID,Date,TestID,Statistics])
 
         if (checkData.rowCount>0)
             res.json(newData.rows[0])
